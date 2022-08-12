@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,57 +18,73 @@ class _HomePageState extends State<HomePage> {
   int xScore = 0;
   int filledBoxees = 0;
 
+  static TextStyle myNewFont = GoogleFonts.pressStart2p(
+      textStyle: const TextStyle(color: Colors.black, letterSpacing: 3));
+  static TextStyle myNewFontWhite = GoogleFonts.pressStart2p(
+      textStyle:
+          const TextStyle(color: Colors.white, letterSpacing: 3, fontSize: 15));
+  static TextStyle myNewGridTextFont = GoogleFonts.pressStart2p(
+      textStyle: const TextStyle(color: Colors.white, fontSize: 40));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.grey[900],
       body: Column(
         children: [
+          const SizedBox(
+            height: 15,
+          ),
           Expanded(
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Player O',
-                          style: myTextStyle,
-                        ),
-                        Text(
-                          ohScore.toString(),
-                          style: myTextStyle,
-                        ),
-                      ],
-                    ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Player O',
+                        style: myNewFontWhite,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        ohScore.toString(),
+                        style: myNewFontWhite,
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Player X',
-                          style: myTextStyle,
-                        ),
-                        Text(
-                          xScore.toString(),
-                          style: myTextStyle,
-                        ),
-                      ],
-                    ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Player X',
+                        style: myNewFontWhite,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        xScore.toString(),
+                        style: myNewFontWhite,
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: GridView.builder(
               itemCount: 9,
+              physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3),
               itemBuilder: ((context, index) {
@@ -83,11 +100,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Center(
                       child: Text(
-                        displayExOh[index],
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                        ),
+                        displayExOh[index].toUpperCase(),
+                        style: myNewGridTextFont,
                       ),
                     ),
                   ),
@@ -96,7 +110,23 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Expanded(
-            child: Container(),
+            child: Center(
+              child: Column(
+                children: [
+                  Text(
+                    'TIC TAC TOE',
+                    style: myNewFontWhite,
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Text(
+                    'Try it out',
+                    style: myNewFontWhite,
+                  )
+                ],
+              ),
+            ),
           ),
         ],
       ),
