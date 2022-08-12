@@ -12,7 +12,9 @@ a link will be provided here when TODO#1 is done
 
 ## Remark
 
-- Yeah mo GitHub project: [A.I. Decision Part](https://github.com/yeahmoeee/tic-tac-toe)
+- Will use Yeah mo GitHub project: [A.I. Decision Part](https://github.com/yeahmoeee/tic-tac-toe)
+- Used [google_fonts 3.0.1](https://pub.dev/packages/google_fonts/install)
+- Used [avatar_glow 2.0.2](https://pub.dev/packages/avatar_glow/install)
 
 ## Update Note
 
