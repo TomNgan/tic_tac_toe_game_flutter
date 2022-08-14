@@ -1,9 +1,9 @@
 # Tic Tac Toe Game
 
-A game I'm making with Yeah mo - [yeahmoeee](https://github.com/yeahmoeee)
+A game I'm making with Ye Moe - [yeahmoeee](https://github.com/yeahmoeee)
 - Game UI: Shing
 - Basic Logic: Shing
-- A.I. Decision: Yeah mo
+- A.I. Decision: Ye Moe
 
 ## Getting Started
 
